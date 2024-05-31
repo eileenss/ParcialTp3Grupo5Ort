@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
 
         val navController = navHostFragment.navController
 
+        val headerView = layoutInflater.inflate(R.layout.header_nav, navigationView, false)
+        navigationView.addHeaderView(headerView)
+
         // Vinculo la navegación del drawer con la del graph
         navigationView.setupWithNavController(navController)
 
