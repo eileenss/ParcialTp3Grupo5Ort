@@ -14,6 +14,9 @@
     <string name="drawer_hello">Hello</string>
     <string name="drawer_name">Macy Johnson</string>
 
+    /vuelo card/
+    <string name="botonCard">View Details</string>
+
 
 
 </resources>
