@@ -1,5 +1,19 @@
 <resources>
-    <string name="app_name">ParcialTp3Grupo5Ort</string>
+    <string name="app_name">ParcialOrt</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    /menu bottom/
+    <string name="bottom_explore">Explore</string>
+    <string name="bottom_search">Search</string>
+    <string name="bottom_offers">Offers</string>
+    <string name="bottom_profile">Profile</string>
+
+    /menu drawer/
+    <string name="drawer_hello">Hello</string>
+    <string name="drawer_name">Macy Johnson</string>
+
+
+
 </resources>

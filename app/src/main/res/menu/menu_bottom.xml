@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/explore"
+        android:icon="@drawable/bottom_explore"
+        android:title="@string/bottom_explore" />
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/bottom_search"
+        android:title="@string/bottom_search" />
+    <item
+        android:id="@+id/offers"
+        android:icon="@drawable/bottom_offers"
+        android:title="@string/bottom_offers" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/bottom_profile"
+        android:title="@string/bottom_profile" />
+</menu>
