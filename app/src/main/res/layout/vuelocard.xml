@@ -69,8 +69,8 @@
                     android:id="@+id/departureAirportId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/blue"
-                    android:text="JFK" />
+                    android:text="@string/departureidCard"
+                    android:textColor="@color/blue" />
 
                 <TextView
                     android:id="@+id/departureAirportName"
@@ -96,8 +96,8 @@
                     android:id="@+id/arrivalAirportId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/blue"
-                    android:text="LAX" />
+                    android:text="@string/arrivalid"
+                    android:textColor="@color/blue" />
 
                 <TextView
                     android:id="@+id/arrivalAirportName"

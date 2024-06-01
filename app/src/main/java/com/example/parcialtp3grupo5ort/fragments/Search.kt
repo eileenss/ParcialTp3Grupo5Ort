@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.navigation.findNavController
 import com.example.parcialtp3grupo5ort.R
 
@@ -13,7 +14,7 @@ import com.example.parcialtp3grupo5ort.R
 class Search : Fragment() {
 
     lateinit var viewSearch: View
-    lateinit var btnSearch: Button
+    lateinit var btnSearch: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

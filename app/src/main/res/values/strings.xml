@@ -16,6 +16,37 @@
 
     /vuelo card/
     <string name="botonCard">View Details</string>
+    <string name="departureidCard">EZE</string>
+    <string name="arrivalid">MIA</string>
+
+    /Search/
+    <string name="search_inputBorderTxt1">From</string>
+    <string name="search_inputText1">Select Departure</string>
+    <string name="search_inputBorderTxt2">To</string>
+    <string name="search_inputText2">Select Arrival</string>
+    <string name="search_inputBorderTxt3">Departure Date</string>
+    <string name="search_inputText3">Select Date</string>
+    <string name="search_inputBorderTxt4">Passangers</string>
+    <string name="search_inputText4">1 Adult</string>
+    <string name="search_inputBorderTxt5">Class</string>
+    <string name="search_inputText5">Economy</string>
+    <string name="back">Back</string>
+    <string name="toolbar_title">Search</string>
+    <string name="menu">Menu</string>
+    <string name="tab1">One way</string>
+    <string name="tab2">Round Trip</string>
+    <string name="input_label_1">From</string>
+    <string name="input_hint_1">Select Departure</string>
+    <string name="input_label_2">To</string>
+    <string name="input_hint_2">Select Arrival</string>
+    <string name="input_label_3">Departure Date</string>
+    <string name="input_hint_3">Select Date</string>
+    <string name="input_label_4">Passengers</string>
+    <string name="input_hint_4">1 Adult</string>
+    <string name="input_label_5">Class</string>
+    <string name="input_hint_5">Economy</string>
+    <string name="search">Search</string>
+
 
 
 
