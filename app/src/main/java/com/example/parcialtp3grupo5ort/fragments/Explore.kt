@@ -5,56 +5,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
+import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
+import com.example.parcialtp3grupo5ort.entities.TrendDestination
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Explore.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Explore : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var viewExplore: View
+    lateinit var rvTrendingDestinations: RecyclerView
+    private var destinations: MutableList<TrendDestination> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false)
+        viewExplore = inflater.inflate(R.layout.fragment_explore, container, false)
+
+        rvTrendingDestinations = viewExplore.findViewById(R.id.rv_trending_destinations)
+
+        return viewExplore
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Explore.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Explore().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onStart(){
+        super.onStart()
+
+        destinations.add(TrendDestination(name = "Boracay", country = "Philippines", code = "5D4N", img = R.drawable.boracay))
+        destinations.add(TrendDestination(name = "Baros", country = "Maldivas", code = "7D6N", img = R.drawable.baros))
+        destinations.add(TrendDestination(name = "Bali", country = "Indonesia", code = "3D2N", img = R.drawable.bali))
+        destinations.add(TrendDestination(name = "Palawan", country = "Philippines", code = "3D2N", img = R.drawable.palawan))
+
+
+        rvTrendingDestinations.setHasFixedSize(true)
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val trendDestAdapter = TrendDestinationAdapter(destinations)
+
+        rvTrendingDestinations.layoutManager = linearLayoutManager
+        rvTrendingDestinations.adapter = trendDestAdapter
     }
 }

@@ -6,5 +6,13 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.28832116788321166" />
+      </ProjectState>
+    </option>
   </component>
 </project>
