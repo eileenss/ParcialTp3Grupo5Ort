@@ -1,10 +1,11 @@
 package com.example.parcialtp3grupo5ort.model
 
 data class FlightResponse(
-    val best_flights: List<BestFlight>
+    val best_flights: List<FlightInfo>,
+    val other_flights: List<FlightInfo>
 )
 
-data class BestFlight(
+data class FlightInfo(
     val flights: List<FlightDetail>,
     val total_duration: Int,
     val price: Int

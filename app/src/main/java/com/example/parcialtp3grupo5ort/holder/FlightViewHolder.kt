@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
-import com.example.parcialtp3grupo5ort.model.BestFlight
+import com.example.parcialtp3grupo5ort.model.FlightInfo
 import com.squareup.picasso.Picasso
 
 class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -17,7 +17,7 @@ class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val flightPrice: TextView = view.findViewById(R.id.flightPrice)
     private val tiempoVuelo: TextView = view.findViewById(R.id.tiempoVuelo)
 
-    fun bind(flight: BestFlight) {
+    fun bind(flight: FlightInfo) {
         val firstFlight = flight.flights.first()
         val lastFlight = flight.flights.last()
 
@@ -29,6 +29,7 @@ class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         flightPrice.text = "$${flight.price}"
         tiempoVuelo.text = formatDuration(flight.total_duration)
     }
+
     private fun formatDuration(duration: Int): String {
         val hours = duration / 60
         val minutes = duration % 60

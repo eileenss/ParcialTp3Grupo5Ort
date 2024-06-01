@@ -10,20 +10,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
 import com.example.parcialtp3grupo5ort.adapter.FlightAdapter
-import com.example.parcialtp3grupo5ort.model.BestFlight
+import com.example.parcialtp3grupo5ort.model.FlightInfo
 import com.example.parcialtp3grupo5ort.model.FlightResponse
 import com.example.parcialtp3grupo5ort.service.ActivityServiceApiBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class SearchResults : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var flightAdapter: FlightAdapter
-    private val flights = mutableListOf<BestFlight>()
-
+    private val flights = mutableListOf<FlightInfo>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +43,7 @@ class SearchResults : Fragment() {
 
         loadFlights()
     }
+
     private fun loadFlights() {
         val service = ActivityServiceApiBuilder.create()
 
@@ -59,8 +58,9 @@ class SearchResults : Fragment() {
             override fun onResponse(call: Call<FlightResponse>, response: Response<FlightResponse>) {
                 if (response.isSuccessful) {
                     val flightResponse = response.body()
-                    flightResponse?.best_flights?.let {
-                        flights.addAll(it)
+                    flightResponse?.let {
+                        flights.addAll(it.best_flights)
+                        flights.addAll(it.other_flights)
                         flightAdapter.notifyDataSetChanged()
                     }
                 }
@@ -71,6 +71,4 @@ class SearchResults : Fragment() {
             }
         })
     }
-
-
 }
