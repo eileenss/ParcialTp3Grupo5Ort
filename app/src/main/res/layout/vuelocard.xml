@@ -70,7 +70,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/departureidCard"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/departureAirportName"
@@ -90,20 +92,26 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="end|right"
+                android:paddingStart="8dp">
 
                 <TextView
                     android:id="@+id/arrivalAirportId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/arrivalid"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_gravity="end"/>
 
                 <TextView
                     android:id="@+id/arrivalAirportName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Los Angeles International Airport" />
+                    android:text="Los Angeles International Airport"
+                    android:layout_gravity="end"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -143,7 +151,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="$250" />
+                android:text="$250"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <!-- Button section -->
@@ -153,6 +164,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/yellowOrange"
             android:text="@string/botonCard"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

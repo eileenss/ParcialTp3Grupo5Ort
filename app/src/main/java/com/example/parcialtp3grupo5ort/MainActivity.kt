@@ -1,6 +1,7 @@
 package com.example.parcialtp3grupo5ort
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -8,6 +9,7 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navigationView: NavigationView
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var bottomNavView: BottomNavigationView
+
+    private val fragmentsWithoutBottomNavAndActionBar = setOf(
+        //Llamo a los id de navigation
+        R.id.searchResults
+
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -51,6 +59,11 @@ class MainActivity : AppCompatActivity() {
 
         }
         NavigationUI.setupWithNavController(bottomNavView,navHostFragment.navController)
+
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+
+            hiddenActionBarAndBottomBarFragments(destination)// Oculta la actionBar y la bottom navigation en los fragmentos requeridos
+        }
     }
     override fun onSupportNavigateUp(): Boolean {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -60,5 +73,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         return false
+    }
+    private fun hiddenActionBarAndBottomBarFragments(destination: NavDestination) {
+        if (destination.id in fragmentsWithoutBottomNavAndActionBar) {
+            bottomNavView.visibility = View.GONE
+            supportActionBar?.hide()
+        } else {
+            bottomNavView.visibility = View.VISIBLE
+            supportActionBar?.show()
+        }
     }
 }
