@@ -6,6 +6,7 @@ data class FlightResponse(
 
 data class BestFlight(
     val flights: List<FlightDetail>,
+    val total_duration: Int,
     val price: Int
 )
 

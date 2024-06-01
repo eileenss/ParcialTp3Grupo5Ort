@@ -15,6 +15,7 @@ class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val arrivalAirportName: TextView = view.findViewById(R.id.arrivalAirportName)
     private val travelClassText: TextView = view.findViewById(R.id.travelClassText)
     private val flightPrice: TextView = view.findViewById(R.id.flightPrice)
+    private val tiempoVuelo: TextView = view.findViewById(R.id.tiempoVuelo)
 
     fun bind(flight: BestFlight) {
         val firstFlight = flight.flights.first()
@@ -26,5 +27,11 @@ class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         arrivalAirportName.text = lastFlight.arrival_airport.name
         travelClassText.text = firstFlight.travel_class
         flightPrice.text = "$${flight.price}"
+        tiempoVuelo.text = formatDuration(flight.total_duration)
+    }
+    private fun formatDuration(duration: Int): String {
+        val hours = duration / 60
+        val minutes = duration % 60
+        return "$hours h $minutes m"
     }
 }
