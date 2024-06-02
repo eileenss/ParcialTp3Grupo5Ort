@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/settings_fragment"
-    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SettingsFragment" >
@@ -22,7 +21,7 @@
         app:layout_constraintVertical_bias="0.025">
 
         <LinearLayout
-            android:layout_width="310dp"
+            android:layout_width="311dp"
             android:layout_height="112dp"
             android:gravity="center"
             android:orientation="vertical"
@@ -46,22 +45,21 @@
 
                 <TextView
                     android:id="@+id/textModoOscuro"
+                    style="@style/modoOscuroStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    style="@style/modoOscuroStyle"
                     android:paddingTop="20dp"
                     android:text="@string/txt_modo_oscuro"
-
-                     />
+                    />
 
                 <Switch
                     android:id="@+id/switch_dark_mode"
-                    style="@style/modoOscuroStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:paddingBottom="3dp"/>
             </LinearLayout>
 
         </LinearLayout>

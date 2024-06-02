@@ -17,4 +17,14 @@
     /Settings/
     <string name="txt_generales">Generales</string>
     <string name="txt_modo_oscuro">Modo Oscuro</string>
+
+    /Profile/
+    <string name="txt_macy_johnson">Macy Johnson</string>
+    <string name="txt_baguio">Baguio, Philippines</string>
+    <string name="txt_profile_description">I like the beach, mountains, forest and everything about nature! :)</string>
+    <string name="txt_payment">Payment Details</string>
+    <string name="txt_referral">Referral Code</string>
+    <string name="txt_new">NEW</string>
+    <string name="txt_settings">Settings</string>
+    <string name="txt_logout">Logout</string>
 </resources>
