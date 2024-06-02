@@ -18,11 +18,35 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/grayLight"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
             android:paddingTop="16dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <!-- Add an ImageView in the middle -->
+            <ImageView
+                android:id="@+id/imageView_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/logotoolbar"
+                android:adjustViewBounds="true"
+                android:maxWidth="200dp"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="40dp" />
+
+            <!-- Add another icon on the right end -->
+            <ImageView
+                android:id="@+id/imageView_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/oval"
+                tools:layout_editor_absoluteX="411dp"
+                tools:layout_editor_absoluteY="40dp" />
+
+        </androidx.appcompat.widget.Toolbar>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
@@ -43,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:background="@color/grayLight"
+            android:background="@color/white"
             app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
             app:itemIconSize="81dp"
             app:itemHorizontalTranslationEnabled="true"
