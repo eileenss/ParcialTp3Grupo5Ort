@@ -162,7 +162,7 @@
             android:id="@+id/bookButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/yellowOrange"
+            android:backgroundTint="@color/orange"
             android:text="@string/botonCard"
             android:textColor="@android:color/white" />
     </LinearLayout>
