@@ -40,7 +40,6 @@ class Explore : Fragment() {
         destinations.add(TrendDestination(name = "Bali", country = "Indonesia", code = "3D2N", img = R.drawable.bali))
         destinations.add(TrendDestination(name = "Palawan", country = "Philippines", code = "3D2N", img = R.drawable.palawan))
 
-
         rvTrendingDestinations.setHasFixedSize(true)
         val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val trendDestAdapter = TrendDestinationAdapter(destinations)

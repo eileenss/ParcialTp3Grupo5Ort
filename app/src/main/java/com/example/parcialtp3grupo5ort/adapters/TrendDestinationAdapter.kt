@@ -14,7 +14,7 @@ class TrendDestinationAdapter(
     override fun getItemCount() = trendingDestinations.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendDestinationHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.trending_destination, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.trend_dest_explore, parent, false)
         return (TrendDestinationHolder(view))
     }
 
@@ -26,9 +26,5 @@ class TrendDestinationAdapter(
         holder.setCode(trendingDestination.code)
         holder.setImg(trendingDestination.img)
     }
-
-
-
-
 
 }
