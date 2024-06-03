@@ -17,10 +17,10 @@
 
         <ImageView
             android:id="@+id/ic_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_back"
-            android:contentDescription="@string/back" />
+            android:layout_width="41dp"
+            android:layout_height="35dp"
+            android:contentDescription="@string/back"
+            android:src="@drawable/icon_back" />
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -46,8 +46,6 @@
         android:id="@+id/card_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_below="@id/toolbar"
         android:gravity="center"
         android:background="#F8F9FB">
@@ -55,15 +53,19 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="440dp"
-            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:background="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="16dp">
+            app:layout_constraintTop_toTopOf="parent">
 
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <!-- Tab-like buttons -->
                 <LinearLayout
@@ -317,14 +319,10 @@
                     style="@style/btnStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="370dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="14dp"
-                    android:text="@string/search"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/inputs" />
+                    android:layout_marginTop="14dp"
+                    android:text="@string/search" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
