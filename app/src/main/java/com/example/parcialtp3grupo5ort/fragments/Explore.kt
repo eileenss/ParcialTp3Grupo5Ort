@@ -5,56 +5,69 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
+import com.example.parcialtp3grupo5ort.adapters.OfferRvAdapter
+import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
+import com.example.parcialtp3grupo5ort.entities.OfferRv
+import com.example.parcialtp3grupo5ort.entities.Destination
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Explore.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Explore : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var viewExplore: View
+    lateinit var rvTrendingDestinations: RecyclerView
+    private var destinations: MutableList<Destination> = ArrayList()
+    private var offers: MutableList<OfferRv> = ArrayList()
+    lateinit var rvOffers: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false)
+
+        viewExplore = inflater.inflate(R.layout.fragment_explore, container, false)
+
+        rvTrendingDestinations = viewExplore.findViewById(R.id.rv_trending_destinations)
+
+        rvOffers = viewExplore.findViewById(R.id.rv_offers_explore)
+
+        return viewExplore
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Explore.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Explore().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onStart(){
+        super.onStart()
+
+        //Recycler Trending Destinations
+        listDestinations()
+        rvTrendingDestinations.setHasFixedSize(true)
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val trendDestAdapter = TrendDestinationAdapter(destinations)
+        rvTrendingDestinations.layoutManager = linearLayoutManager
+        rvTrendingDestinations.adapter = trendDestAdapter
+
+        //Recycler Offers
+        listOffers()
+        rvOffers.setHasFixedSize(true)
+        val linearLayoutManager2 = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val offerAdapter = OfferRvAdapter(offers)
+        rvOffers.layoutManager = linearLayoutManager2
+        rvOffers.adapter = offerAdapter
+    }
+
+    private fun listDestinations(){
+        destinations.add(Destination(name = "Boracay", country = "Philippines", code = "5D4N", img = R.drawable.boracay, overview = "", details = "", price = "", photos = arrayListOf()))
+        destinations.add(Destination(name = "Baros", country = "Maldivas", code = "7D6N", img = R.drawable.baros, overview = "", details = "", price = "", photos = arrayListOf()))
+        destinations.add(Destination(name = "Bali", country = "Indonesia", code = "3D2N", img = R.drawable.bali, overview = "", details = "", price = "", photos = arrayListOf()))
+        destinations.add(Destination(name = "Palawan", country = "Philippines", code = "3D2N", img = R.drawable.palawan, overview = "", details = "", price = "", photos = arrayListOf()))
+    }
+
+    private fun listOffers(){
+        offers.add(OfferRv(imgCard = R.drawable.master_img, title = context?.getString(R.string.txt_master_offer), details = context?.getString(R.string.txt_lim_offer)))
+        offers.add(OfferRv(imgCard = R.drawable.visa_img, title = context?.getString(R.string.txt_visa_offer), details = context?.getString(R.string.txt_lim_offer)))
     }
 }
