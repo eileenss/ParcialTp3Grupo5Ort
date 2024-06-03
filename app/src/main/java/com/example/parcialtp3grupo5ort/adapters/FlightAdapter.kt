@@ -1,10 +1,10 @@
-package com.example.parcialtp3grupo5ort.adapter
+package com.example.parcialtp3grupo5ort.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
-import com.example.parcialtp3grupo5ort.holder.FlightViewHolder
+import com.example.parcialtp3grupo5ort.holders.FlightViewHolder
 import com.example.parcialtp3grupo5ort.model.FlightInfo
 
 class FlightAdapter(private val flights: List<FlightInfo>) : RecyclerView.Adapter<FlightViewHolder>() {

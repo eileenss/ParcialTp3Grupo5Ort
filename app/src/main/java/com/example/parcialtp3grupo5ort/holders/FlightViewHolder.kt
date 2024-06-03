@@ -1,4 +1,4 @@
-package com.example.parcialtp3grupo5ort.holder
+package com.example.parcialtp3grupo5ort.holders
 
 import android.view.View
 import android.widget.Button
