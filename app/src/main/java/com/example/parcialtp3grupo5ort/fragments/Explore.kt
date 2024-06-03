@@ -11,13 +11,13 @@ import com.example.parcialtp3grupo5ort.R
 import com.example.parcialtp3grupo5ort.adapters.OfferRvAdapter
 import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
 import com.example.parcialtp3grupo5ort.entities.OfferRv
-import com.example.parcialtp3grupo5ort.entities.TrendDestination
+import com.example.parcialtp3grupo5ort.entities.Destination
 
 class Explore : Fragment() {
 
     private lateinit var viewExplore: View
     lateinit var rvTrendingDestinations: RecyclerView
-    private var destinations: MutableList<TrendDestination> = ArrayList()
+    private var destinations: MutableList<Destination> = ArrayList()
     private var offers: MutableList<OfferRv> = ArrayList()
     lateinit var rvOffers: RecyclerView
 
@@ -60,10 +60,10 @@ class Explore : Fragment() {
     }
 
     private fun listDestinations(){
-        destinations.add(TrendDestination(name = "Boracay", country = "Philippines", code = "5D4N", img = R.drawable.boracay))
-        destinations.add(TrendDestination(name = "Baros", country = "Maldivas", code = "7D6N", img = R.drawable.baros))
-        destinations.add(TrendDestination(name = "Bali", country = "Indonesia", code = "3D2N", img = R.drawable.bali))
-        destinations.add(TrendDestination(name = "Palawan", country = "Philippines", code = "3D2N", img = R.drawable.palawan))
+        destinations.add(Destination(name = "Boracay", country = "Philippines", code = "5D4N", img = R.drawable.boracay, overview = "", details = "", price = "", photos = arrayListOf()))
+        destinations.add(Destination(name = "Baros", country = "Maldivas", code = "7D6N", img = R.drawable.baros, overview = "", details = "", price = "", photos = arrayListOf()))
+        destinations.add(Destination(name = "Bali", country = "Indonesia", code = "3D2N", img = R.drawable.bali, overview = "", details = "", price = "", photos = arrayListOf()))
+        destinations.add(Destination(name = "Palawan", country = "Philippines", code = "3D2N", img = R.drawable.palawan, overview = "", details = "", price = "", photos = arrayListOf()))
     }
 
     private fun listOffers(){

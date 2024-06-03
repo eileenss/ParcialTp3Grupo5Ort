@@ -159,12 +159,10 @@
 
         <!-- Button section -->
         <Button
-            android:id="@+id/bookButton"
+            android:id="@+id/btn_details"
             style="@style/btnStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
-            android:text="@string/botonCard"
-            android:textColor="@android:color/white" />
+            android:text="@string/botonCard" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

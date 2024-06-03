@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
-import com.example.parcialtp3grupo5ort.entities.TrendDestination
+import com.example.parcialtp3grupo5ort.entities.Destination
 import com.example.parcialtp3grupo5ort.holders.TrendDestinationHolder
 
 class TrendDestinationAdapter(
-    private val trendingDestinations: MutableList<TrendDestination>
+    private val trendingDestinations: MutableList<Destination>
 ) : RecyclerView.Adapter<TrendDestinationHolder>() {
 
     override fun getItemCount() = trendingDestinations.size

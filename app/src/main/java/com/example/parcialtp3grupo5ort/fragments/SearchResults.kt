@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,17 +23,19 @@ import retrofit2.Response
 
 class SearchResults : Fragment() {
 
+    lateinit var viewSearchResults: View
     private lateinit var recyclerView: RecyclerView
     private lateinit var flightAdapter: FlightAdapter
     private val flights = mutableListOf<FlightInfo>()
     lateinit var iconBack: ImageView
+    //lateinit var btnDetails: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_results, container, false)
+        viewSearchResults = inflater.inflate(R.layout.fragment_search_results, container, false)
+        return viewSearchResults
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,6 +53,13 @@ class SearchResults : Fragment() {
         recyclerView.adapter = flightAdapter
 
         loadFlights()
+
+        //INTENTO DE BOTON VIEW DETAILS
+      /*  btnDetails = recyclerView.findViewById(R.id.btn_details)
+        btnDetails.setOnClickListener {
+            val action = SearchResultsDirections.actionSearchResultsToDestination()
+            viewSearchResults.findNavController().navigate(action)
+        }*/
     }
 
     private fun loadFlights() {
