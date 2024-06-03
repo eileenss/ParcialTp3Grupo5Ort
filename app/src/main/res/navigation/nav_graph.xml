@@ -24,7 +24,11 @@
         android:id="@+id/profile"
         android:name="com.example.parcialtp3grupo5ort.fragments.Profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
     <fragment
         android:id="@+id/settings"
         android:name="com.example.parcialtp3grupo5ort.fragments.SettingsFragment"

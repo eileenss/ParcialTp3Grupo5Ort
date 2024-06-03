@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.navigation.findNavController
 import com.example.parcialtp3grupo5ort.R
 
@@ -15,7 +16,8 @@ import com.example.parcialtp3grupo5ort.R
 class ProfileDetailsFragment : Fragment() {
 
     private lateinit var viewProfileDetails: View
-    private lateinit var buttonSettingsProfile : EditText
+    private lateinit var buttonSettingsProfile : TextView
+
 
     companion object {
         val BUTTON_SETTINGS_PROFILE = R.id.profileSettingsText
@@ -33,7 +35,7 @@ class ProfileDetailsFragment : Fragment() {
     }
     override fun onStart() {
         super.onStart()
-        initListeners()
+       initListeners()
     }
     private fun initViews(){
         buttonSettingsProfile = viewProfileDetails.findViewById(BUTTON_SETTINGS_PROFILE)
@@ -43,7 +45,9 @@ class ProfileDetailsFragment : Fragment() {
     }
 
     private fun navigateToSettings(){
-        val action = ProfileDetailsFragmentDirections.actionProfileDetailsFragmentToSettings()
+       // val action = ProfileDetailsFragmentDirections.actionProfileDetailsFragmentToSettings()
+        //viewProfileDetails.findNavController().navigate(action)
+        val action = ProfileDirections.actionProfileToSettings()
         viewProfileDetails.findNavController().navigate(action)
     }
 }
