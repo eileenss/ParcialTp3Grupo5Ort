@@ -2,141 +2,75 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
-    android:background="@drawable/playa_profile"
+    android:id="@+id/fragmetProfile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.Profile">
 
 
-    <TextView
-        android:id="@+id/macyJohnsonText"
-        style="@style/macyJohsonStyle"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="@string/txt_macy_johnson"
+    <ImageView
+        android:id="@+id/imageFondo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="200dp"
+        android:src="@drawable/playa_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/baguioText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_baguio"
-        style="@style/baguioStyle"
-        tools:layout_editor_absoluteX="237dp"
-        tools:layout_editor_absoluteY="63dp" />
-
-    <TextView
-        android:id="@+id/descriptionProfileText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_profile_description"
-        style="@style/descriptionProfileStyle"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="133dp" />
-
-    <TextView
-        android:id="@+id/paymentText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_payment"
-        style="@style/optionsProfileStyle"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="557dp" />
-
-    <TextView
-        android:id="@+id/referralText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_referral"
-        style="@style/optionsProfileStyle"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="502dp" />
-
-    <TextView
-        android:id="@+id/profileNewText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_new"
-        style="@style/newStyle"
-        tools:layout_editor_absoluteX="325dp"
-        tools:layout_editor_absoluteY="238dp" />
-
-    <TextView
-        android:id="@+id/profileSettingsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_settings"
-        style="@style/optionsProfileStyle"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <TextView
-        android:id="@+id/logoutText"
-        android:layout_width="83dp"
-        android:layout_height="24dp"
-        android:text="@string/txt_logout"
-        style="@style/optionsProfileStyle"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="497dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/profileImage"
         android:layout_width="76dp"
         android:layout_height="64dp"
         android:src="@drawable/oval"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="193dp" />
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.226" />
 
     <ImageView
         android:id="@+id/backProfileIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/white"
         android:src="@drawable/icon_back"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="339dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
 
     <ImageView
         android:id="@+id/pencilIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/pencil_profile"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="82dp" />
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/credit_card_profile"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="176dp" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logout_profile"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="296dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/referral_profile"
-        tools:layout_editor_absoluteX="194dp"
-        tools:layout_editor_absoluteY="405dp" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/settings_icon_profile"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="378dp" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView6"
+        android:name="com.example.parcialtp3grupo5ort.fragments.ProfileDetailsFragment"
+        android:layout_width="0dp"
+        android:layout_height="525dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

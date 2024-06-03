@@ -24,14 +24,19 @@
         android:id="@+id/profile"
         android:name="com.example.parcialtp3grupo5ort.fragments.Profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profile_to_settings"
-            app:destination="@id/settings" />
-    </fragment>
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/settings"
         android:name="com.example.parcialtp3grupo5ort.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="com.example.parcialtp3grupo5ort.fragments.ProfileDetailsFragment"
+        android:label="fragment_profile_details"
+        tools:layout="@layout/fragment_profile_details" >
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
 </navigation>
