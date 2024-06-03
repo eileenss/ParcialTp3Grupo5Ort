@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
@@ -22,6 +24,7 @@ class Search : Fragment() {
     lateinit var btnSearch: Button
     private var offers: MutableList<OfferRv> = ArrayList()
     lateinit var rvOffers: RecyclerView
+    lateinit var iconBack: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,11 +35,17 @@ class Search : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         viewSearch = inflater.inflate(R.layout.fragment_search, container, false)
+        iconBack = viewSearch.findViewById(R.id.ic_back)
         btnSearch = viewSearch.findViewById(R.id.button_search)
         btnSearch.setOnClickListener {
             val action = SearchDirections.actionSearchToSearchResults()
             viewSearch.findNavController().navigate(action)
+        }
+
+        iconBack.setOnClickListener{
+            findNavController().navigateUp()
         }
         rvOffers = viewSearch.findViewById(R.id.rv_offers_explore)
         return viewSearch
