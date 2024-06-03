@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_offer"
+    android:backgroundTint="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="249dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="LIMITED OFFER!"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|top"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="TODO"
+            android:src="@drawable/img_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.966"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038"
+            app:tint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/descuento"
+            android:layout_width="307dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/get_20_disc"
+            android:textAppearance="@style/get_20_disc"
+            android:translationY="-1.45sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.278" />
+
+        <ImageView
+            android:id="@+id/master_card"
+            android:layout_width="102dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/img_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/descripcion_card"
+            android:layout_width="173dp"
+            android:layout_height="88dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/use_your_ma"
+            android:textAppearance="@style/use_your_ma"
+            android:translationY="-1.97sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.519"
+            app:layout_constraintStart_toEndOf="@+id/master_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
+

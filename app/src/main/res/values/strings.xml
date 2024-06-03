@@ -14,6 +14,18 @@
     <string name="drawer_hello">Hello</string>
     <string name="drawer_name">Macy Johnson</string>
 
+    /descount/
+    <string name="get_20_disc">
+        Get 20% discount with your Master credit cards
+    </string>
 
+    /descreption/
+    <string name="use_your_ma">
+        Use your mastercard with any transaction and get 20% discount instantly!
+    </string>
 
+    /offer/
+    <string name="limited_off">
+        Limited offer!
+    </string>
 </resources>
