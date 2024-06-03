@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">ParcialOrt</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    /Explore/
+    <string name="txt_trend_dest">Trending Destinations</string>
+    <string name="txt_flight">Flight</string>
+    <string name="btn_see_all">See all</string>
+    <string name="txt_paris">Paris</string>
+    <string name="txt_price_1299">$1299</string>
+    <string name="txt_from">FROM</string>
 
     /menu bottom/
     <string name="bottom_explore">Explore</string>
@@ -13,12 +19,67 @@
     /menu drawer/
     <string name="drawer_hello">Hello</string>
     <string name="drawer_name">Macy Johnson</string>
+    <string name="txt_offers">Offers</string>
+
+    /vuelo card/
+    <string name="botonCard">View Details</string>
+    <string name="departureidCard">EZE</string>
+    <string name="arrivalid">MIA</string>
+
+    /Search/
+    <string name="search_inputBorderTxt1">From</string>
+    <string name="search_inputText1">Select Departure</string>
+    <string name="search_inputBorderTxt2">To</string>
+    <string name="search_inputText2">Select Arrival</string>
+    <string name="search_inputBorderTxt3">Departure Date</string>
+    <string name="search_inputText3">Select Date</string>
+    <string name="search_inputBorderTxt4">Passangers</string>
+    <string name="search_inputText4">1 Adult</string>
+    <string name="search_inputBorderTxt5">Class</string>
+    <string name="search_inputText5">Economy</string>
+    <string name="back">Back</string>
+    <string name="toolbar_title">Search Flight</string>
+    <string name="menu">Menu</string>
+    <string name="tab1">One way</string>
+    <string name="tab2">Round Trip</string>
+    <string name="input_label_1">From</string>
+    <string name="input_hint_1">Select Departure</string>
+    <string name="input_label_2">To</string>
+    <string name="input_hint_2">Select Arrival</string>
+    <string name="input_label_3">Departure Date</string>
+    <string name="input_hint_3">Select Date</string>
+    <string name="input_label_4">Passengers</string>
+    <string name="input_hint_4">1 Adult</string>
+    <string name="input_label_5">Class</string>
+    <string name="input_hint_5">Economy</string>
+    <string name="search">Search</string>
+
+    /Search Results/
+    <string name="searchResults">35 results found</string>
+    <string name="searchResultsToolbarTitle">EZE -> MIA</string>
+    <string name="searchResultsToolbarSubtitle">6 June, 2024</string>
+
 
     /descount/
     <string name="get_20_disc">
         Get 20% discount with your Master credit cards
     </string>
 
+
+    /Offers/
+    <string name="txt_lim_offer">Limited time offer!</string>
+    <string name="txt_master_offer">20% discount for mastercard users</string>
+    <string name="txt_visa_offer">25% discount with your Visa credit cards</string>
+
+    /Destination/
+    <string name="txr_overview">Overview</string>
+    <string name="txt_dest">Destination</string>
+    <string name="txt_country">Country</string>
+    <string name="txt_code">Code</string>
+    <string name="txt_price">Price</string>
+    <string name="txt_details">Details</string>
+    <string name="txt_photos">Photos</string>
+    <string name="txt_btn_book_now">Book now</string>
     /descreption/
     <string name="use_your_ma">
         Use your mastercard with any transaction and get 20% discount instantly!
