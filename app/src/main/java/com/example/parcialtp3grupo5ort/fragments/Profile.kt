@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.parcialtp3grupo5ort.R
 
 
@@ -46,7 +47,7 @@ buttonBackProfile.setOnClickListener { navigateBack() }
 }
 
     private fun navigateBack(){
-
+findNavController().navigateUp()
     }
 
 
