@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentProfileDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.ProfileDetailsFragment"  >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/macyJohnsonText"
+            style="@style/macyJohsonStyle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="40dp"
+            android:text="@string/txt_macy_johnson" />
+
+        <TextView
+            android:id="@+id/baguioText"
+            style="@style/baguioStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="@string/txt_baguio" />
+
+        <TextView
+            android:id="@+id/descriptionProfileText"
+            style="@style/descriptionProfileStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:text="@string/txt_profile_description" />
+
+        <ImageView
+            android:id="@+id/imageLinea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:src="@drawable/linea_profile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/creditCardImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:src="@drawable/credit_card_profile" />
+
+            <TextView
+                android:id="@+id/paymentText"
+                style="@style/optionsProfileStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:text="@string/txt_payment" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageReferral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:src="@drawable/referral_profile" />
+
+            <TextView
+                android:id="@+id/referralText"
+                style="@style/optionsProfileStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text="@string/txt_referral" />
+
+            <TextView
+                android:id="@+id/profileNewText"
+                style="@style/newStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:background="@color/verdeNew"
+                android:text="@string/txt_new" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:src="@drawable/settings_icon_profile" />
+
+            <TextView
+                android:id="@+id/profileSettingsText"
+                style="@style/optionsProfileStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/txt_settings" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:src="@drawable/logout_profile" />
+
+            <TextView
+                android:id="@+id/logoutText"
+                style="@style/optionsProfileStyle"
+                android:layout_width="83dp"
+                android:layout_height="25dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:text="@string/txt_logout" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
