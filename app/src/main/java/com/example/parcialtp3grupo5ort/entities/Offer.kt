@@ -7,14 +7,14 @@ data class Offer (
 
     val discount: String = "",
     val description: String = "",
-    val imageUrl: String = "",
+    val imageUrl: Int
 
 
     ) : Parcelable {
         constructor(parcel: Parcel) : this(
-        parcel.readString().toString(),
-        parcel.readString().toString(),
             parcel.readString().toString(),
+            parcel.readString().toString(),
+            parcel.readInt()
 
         )
         override fun toString(): String {
@@ -24,7 +24,7 @@ data class Offer (
         override fun writeToParcel(parcel: Parcel, flags: Int) {
             parcel.writeString(discount)
             parcel.writeString(description)
-            parcel.writeString(imageUrl)
+            parcel.writeInt(imageUrl)
 
         }
 

@@ -25,7 +25,7 @@ class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val firstFlight = flight.flights.first()
         val lastFlight = flight.flights.last()
 
-        Picasso.get().load(firstFlight.airline_logo).into(airlineLogo)
+       Picasso.get().load(firstFlight.airline_logo).into(airlineLogo)
         airlineName.text = firstFlight.airline
         departureAirportName.text = firstFlight.departure_airport.name
         arrivalAirportName.text = lastFlight.arrival_airport.name

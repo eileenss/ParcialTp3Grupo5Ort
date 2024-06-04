@@ -1,4 +1,4 @@
-package com.example.parcialtp3grupo5ort.adapter
+package com.example.parcialtp3grupo5ort.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -25,20 +25,15 @@ private val offers: MutableList<Offer>
         return (OfferHolder(view))
     }
 
-    override fun onBindViewHolder(
-        holder: OfferHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: OfferHolder, position: Int) {
 
         val offer = offers[position]
 
         holder.setDiscount(offer.discount)
         holder.setDescription(offer.description)
-        //holder.setAvatar(contact.avatar)
+        holder.setImgCard(offer.imageUrl)
 
-        /*holder.getCardLayout().setOnClickListener{
-            onItemClick.onViewItemDetail(contact)
-        }*/
+
     }
 
 }

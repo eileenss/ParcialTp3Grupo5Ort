@@ -17,7 +17,7 @@
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/ic_back"
+            android:id="@+id/back"
             android:layout_width="42dp"
             android:layout_height="41dp"
             android:contentDescription="@string/back"
