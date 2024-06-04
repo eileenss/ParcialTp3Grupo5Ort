@@ -11,15 +11,15 @@
         android:title="Notification" />
     <item
         android:id="@+id/gethelp"
-        android:icon="@android:drawable/ic_dialog_email"
+        android:icon="@drawable/ion_mail_outline"
         android:title="Get Help" />
     <item
         android:id="@+id/calendar"
-        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:icon="@drawable/calendersito"
         android:title="Calendar" />
     <item
         android:id="@+id/settings"
-        android:icon="@android:drawable/ic_menu_preferences"
+        android:icon="@drawable/clarity_settings_line"
         android:title="Settings" />
 
 
