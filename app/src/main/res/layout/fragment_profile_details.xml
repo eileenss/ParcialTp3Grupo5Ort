@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="2dp"
                 android:paddingRight="2dp"
-                android:background="@color/verdeNew"
+                android:background="@color/green"
                 android:text="@string/txt_new" />
         </LinearLayout>
 

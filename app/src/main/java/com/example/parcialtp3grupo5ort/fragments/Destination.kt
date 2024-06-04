@@ -37,7 +37,7 @@ class Destination : Fragment() {
             findNavController().navigateUp()
         }
 
-        rvPhotos = viewDestination.findViewById(R.id.rv_photos_dest)
+       /* rvPhotos = viewDestination.findViewById(R.id.rv_photos_dest)*/
 
         /*listPhotos()
         rvPhotos.setHasFixedSize(true)

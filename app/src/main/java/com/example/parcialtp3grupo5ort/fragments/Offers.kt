@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
-import com.example.parcialtp3grupo5ort.adapter.OfferAdapter
+import com.example.parcialtp3grupo5ort.adapters.OfferAdapter
 import com.example.parcialtp3grupo5ort.entities.Offer
 
 

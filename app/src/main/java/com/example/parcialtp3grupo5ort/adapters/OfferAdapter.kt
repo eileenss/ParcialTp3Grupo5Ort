@@ -1,4 +1,4 @@
-package com.example.parcialtp3grupo5ort.adapter
+package com.example.parcialtp3grupo5ort.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
