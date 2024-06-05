@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
 import com.example.parcialtp3grupo5ort.adapters.OfferRvAdapter
-import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
 import com.example.parcialtp3grupo5ort.entities.OfferRv
 
 
@@ -37,7 +35,7 @@ class Search : Fragment() {
         // Inflate the layout for this fragment
 
         viewSearch = inflater.inflate(R.layout.fragment_search, container, false)
-        iconBack = viewSearch.findViewById(R.id.ic_back)
+        iconBack = viewSearch.findViewById(R.id.back)
         btnSearch = viewSearch.findViewById(R.id.button_search)
         btnSearch.setOnClickListener {
             val action = SearchDirections.actionSearchToSearchResults()
@@ -47,6 +45,7 @@ class Search : Fragment() {
         iconBack.setOnClickListener{
             findNavController().navigateUp()
         }
+
         rvOffers = viewSearch.findViewById(R.id.rv_offers_explore)
         return viewSearch
     }
