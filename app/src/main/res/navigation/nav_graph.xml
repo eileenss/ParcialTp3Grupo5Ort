@@ -40,7 +40,8 @@
         tools:layout="@layout/fragment_search_results">
         <action
             android:id="@+id/action_searchResults_to_destination"
-            app:destination="@id/destination" />
+            app:destination="@id/destination"
+            />
     </fragment>
 
     <fragment

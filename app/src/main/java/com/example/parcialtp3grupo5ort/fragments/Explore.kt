@@ -5,21 +5,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.example.parcialtp3grupo5ort.R
 import com.example.parcialtp3grupo5ort.adapters.OfferRvAdapter
 import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
+import com.example.parcialtp3grupo5ort.database.AppDatabase
+import com.example.parcialtp3grupo5ort.database.DestinationEntity
 import com.example.parcialtp3grupo5ort.entities.OfferRv
 import com.example.parcialtp3grupo5ort.entities.Destination
+import kotlinx.coroutines.launch
 
 class Explore : Fragment() {
 
     private lateinit var viewExplore: View
-    lateinit var rvTrendingDestinations: RecyclerView
+    private lateinit var rvTrendingDestinations: RecyclerView
     private var destinations: MutableList<Destination> = ArrayList()
     private var offers: MutableList<OfferRv> = ArrayList()
-    lateinit var rvOffers: RecyclerView
+    private lateinit var rvOffers: RecyclerView
+    private lateinit var btnFav: ImageButton
+    private lateinit var db: AppDatabase
+    private lateinit var destinationName: TextView
+    private lateinit var destinationPrice: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +47,44 @@ class Explore : Fragment() {
 
         rvOffers = viewExplore.findViewById(R.id.rv_offers_explore)
 
+        btnFav = viewExplore.findViewById(R.id.btn_fav_explore)
+
+        destinationName = viewExplore.findViewById(R.id.txt_paris)
+
+        destinationPrice = viewExplore.findViewById(R.id.txt_price)
+
+        db = Room.databaseBuilder(
+            requireContext(),
+            AppDatabase::class.java, "database-name"
+        ).build()
+
+        lifecycleScope.launch {
+            val destination = db.getDestinationDao().getDestinationsByName(destinationName.toString())
+            if (destination != null) {
+                btnFav.setImageResource(R.drawable.heart)
+            } else {
+                btnFav.setImageResource(R.drawable.heart_fav)
+            }
+        }
+
+        btnFav.setOnClickListener {
+            lifecycleScope.launch {
+                val destination = db.getDestinationDao().getDestinationsByName(destinationName.toString())
+                if (destination == null) {
+                    val newDestination = DestinationEntity(name = destinationName.toString(), price = destinationPrice.toString())
+                    db.getDestinationDao().insertDestination(newDestination)
+                    btnFav.setImageResource(R.drawable.heart)
+                } else {
+                    db.getDestinationDao().deleteDestination(destination)
+                    btnFav.setImageResource(R.drawable.heart_fav)
+                }
+            }
+        }
+
+
         return viewExplore
     }
+
 
     override fun onStart(){
         super.onStart()
