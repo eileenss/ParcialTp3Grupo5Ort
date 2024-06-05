@@ -1,6 +1,8 @@
 package com.example.parcialtp3grupo5ort.fragments
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -69,9 +71,9 @@ class Explore : Fragment() {
         lifecycleScope.launch {
             val destination = db.getDestinationDao().getDestinationsByName(destinationNameText)
             if (destination?.isFavorite == true) {
-                btnFav.setImageResource(R.drawable.heart)
+                btnFav.setImageResource(R.drawable.heart_fav) // Marked as favorite
             } else {
-                btnFav.setImageResource(R.drawable.heart_fav)
+                btnFav.setImageResource(R.drawable.heart) // Not marked as favorite
             }
         }
 
@@ -79,20 +81,30 @@ class Explore : Fragment() {
             lifecycleScope.launch {
                 val destination = db.getDestinationDao().getDestinationsByName(destinationNameText)
                 if (destination == null) {
+                    // Insert new favorite destination
                     val newDestination = DestinationEntity(name = destinationNameText, price = destinationPrice.text.toString(), isFavorite = true)
                     db.getDestinationDao().insertDestination(newDestination)
-                    btnFav.setImageResource(R.drawable.heart)
+                    Log.d(TAG, "New destination inserted: $newDestination")
+                    btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
                 } else {
-                    val updatedDestination = destination.copy(isFavorite = !destination.isFavorite)
-                    db.getDestinationDao().updateDestination(updatedDestination)
-                    if (updatedDestination.isFavorite) {
-                        btnFav.setImageResource(R.drawable.heart)
+                    if (destination.isFavorite) {
+                        // Remove destination from favorites
+                        db.getDestinationDao().deleteDestination(destination)
+                        Log.d(TAG, "Destination removed: $destination")
+                        btnFav.setImageResource(R.drawable.heart) // Set to not favorite
                     } else {
-                        btnFav.setImageResource(R.drawable.heart_fav)
+                        // Update existing destination to be favorite
+                        val updatedDestination = destination.copy(isFavorite = true)
+                        db.getDestinationDao().updateDestination(updatedDestination)
+                        Log.d(TAG, "Destination updated to favorite: $updatedDestination")
+                        btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
                     }
                 }
             }
         }
+
+
+
 
         return viewExplore
     }
