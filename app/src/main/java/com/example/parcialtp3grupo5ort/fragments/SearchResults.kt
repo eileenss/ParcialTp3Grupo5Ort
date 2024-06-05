@@ -39,7 +39,7 @@ class SearchResults : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        iconBack = view.findViewById(R.id.ic_back)
+        iconBack = view.findViewById(R.id.back)
         iconBack.setOnClickListener{
             findNavController().navigateUp()
         }

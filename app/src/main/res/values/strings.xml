@@ -95,6 +95,7 @@
     <string name="limited_off">
         Limited offer!
     </string>
+
     /Profile/
     <string name="txt_macy_johnson">Macy Johnson</string>
     <string name="txt_baguio">Baguio, Philippines</string>
@@ -104,4 +105,9 @@
     <string name="txt_new">NEW</string>
     <string name="txt_settings">Settings</string>
     <string name="txt_logout">Logout</string>
+
+    <string name="offers">
+        Offers
+    </string>
+
 </resources>
