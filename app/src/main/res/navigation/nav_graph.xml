@@ -48,7 +48,14 @@
         android:id="@+id/destination"
         android:name="com.example.parcialtp3grupo5ort.fragments.Destination"
         android:label="fragment_destination"
-        tools:layout="@layout/fragment_destination" />
+        tools:layout="@layout/fragment_destination" >
+        <argument
+            android:name="arrivalAirportName"
+            app:argType="string" />
+        <argument
+            android:name="flightPrice"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/settings"

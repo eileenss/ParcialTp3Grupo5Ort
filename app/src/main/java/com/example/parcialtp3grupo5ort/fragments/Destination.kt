@@ -16,6 +16,7 @@ import com.example.parcialtp3grupo5ort.R
 import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
 import com.example.parcialtp3grupo5ort.entities.Destination
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import androidx.room.Room
 import com.example.parcialtp3grupo5ort.database.AppDatabase
 import com.example.parcialtp3grupo5ort.database.DestinationEntity
@@ -30,6 +31,8 @@ class Destination : Fragment() {
     private lateinit var destinationName: TextView
     private lateinit var destinationPrice: TextView
     private lateinit var db: AppDatabase
+    private val args: DestinationArgs by navArgs()
+
     /*private var photos: MutableList<Photo> = ArrayList()*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,9 +50,17 @@ class Destination : Fragment() {
             findNavController().navigateUp()
         }
 
+
+        val arrivalAirportName = args.arrivalAirportName
+        val flightPrice = args.flightPrice
+
         btnFav = viewDestination.findViewById(R.id.btn_fav_dest)
         destinationName = viewDestination.findViewById(R.id.txt_dest_dest)
         destinationPrice = viewDestination.findViewById(R.id.txt_price_dest)
+
+
+/*        destinationName.text = arrivalAirportName
+        destinationPrice.text = flightPrice*/
 
         db = Room.databaseBuilder(
             requireContext(),
@@ -97,6 +108,8 @@ class Destination : Fragment() {
         val photosAdapter = PhotosAdapter(photos)
         rvPhotos.layoutManager = linearLayoutManager
         rvPhotos.adapter = photosAdapter*/
+
+
 
         return viewDestination
     }

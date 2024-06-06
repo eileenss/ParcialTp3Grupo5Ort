@@ -34,7 +34,7 @@ class FlightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         tiempoVuelo.text = formatDuration(flight.total_duration)
 
         btnDetails.setOnClickListener {
-            val action = SearchResultsDirections.actionSearchResultsToDestination()
+            val action = SearchResultsDirections.actionSearchResultsToDestination(arrivalAirportName = arrivalAirportName.text.toString(), flightPrice = flightPrice.text.toString())
             btnDetails.findNavController().navigate(action)
         }
     }
