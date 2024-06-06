@@ -74,10 +74,10 @@
 
     /Destination/
     <string name="txr_overview">Overview</string>
-    <string name="txt_dest">Destination</string>
-    <string name="txt_country">Country</string>
-    <string name="txt_code">Code</string>
-    <string name="txt_price">Price</string>
+    <string name="txt_dest">Borocay</string>
+    <string name="txt_country">Philippines</string>
+    <string name="txt_code">5D4N</string>
+    <string name="txt_price">$349</string>
     <string name="txt_details">Details</string>
     <string name="txt_photos">Photos</string>
     <string name="txt_btn_book_now">Book now</string>
