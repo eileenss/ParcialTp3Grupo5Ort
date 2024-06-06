@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/explore">
+
+    <fragment
+        android:id="@+id/explore"
+        android:name="com.example.parcialtp3grupo5ort.fragments.Explore"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" />
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.parcialtp3grupo5ort.fragments.Search"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_to_searchResults"
+            app:destination="@id/searchResults" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/offers"
+        android:name="com.example.parcialtp3grupo5ort.fragments.Offers"
+        android:label="fragment_offers"
+        tools:layout="@layout/fragment_offers" />
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.parcialtp3grupo5ort.fragments.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/searchResults"
+        android:name="com.example.parcialtp3grupo5ort.fragments.SearchResults"
+        android:label="fragment_search_results"
+        tools:layout="@layout/fragment_search_results">
+        <action
+            android:id="@+id/action_searchResults_to_destination"
+            app:destination="@id/destination"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination"
+        android:name="com.example.parcialtp3grupo5ort.fragments.Destination"
+        android:label="fragment_destination"
+        tools:layout="@layout/fragment_destination" />
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.parcialtp3grupo5ort.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="com.example.parcialtp3grupo5ort.fragments.ProfileDetailsFragment"
+        android:label="fragment_profile_details"
+        tools:layout="@layout/fragment_profile_details">
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_profile_to_settings"
+        app:destination="@id/settings" />
 
 </navigation>
