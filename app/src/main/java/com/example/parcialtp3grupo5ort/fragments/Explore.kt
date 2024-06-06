@@ -12,14 +12,12 @@ import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.parcialtp3grupo5ort.R
 import com.example.parcialtp3grupo5ort.adapters.OfferRvAdapter
 import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
 import com.example.parcialtp3grupo5ort.database.AppDatabase
-import com.example.parcialtp3grupo5ort.database.DestinationEntity
+import com.example.parcialtp3grupo5ort.database.dao.DestinationDao
+import com.example.parcialtp3grupo5ort.database.entities.DestinationEntity
 import com.example.parcialtp3grupo5ort.entities.OfferRv
 import com.example.parcialtp3grupo5ort.entities.Destination
 import kotlinx.coroutines.launch
@@ -35,12 +33,13 @@ class Explore : Fragment() {
     private lateinit var db: AppDatabase
     private lateinit var destinationName: TextView
     private lateinit var destinationPrice: TextView
-    private val MIGRATION_1_2 = object : Migration(1, 2) {
+    private lateinit var destinationDao: DestinationDao
+  /*  private val MIGRATION_1_2 = object : Migration(1, 2) {
         override fun migrate(database: SupportSQLiteDatabase) {
             // Perform schema changes like adding a new column
             database.execSQL("ALTER TABLE destination_table ADD COLUMN is_favorite INTEGER NOT NULL DEFAULT 0")
         }
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,21 +54,24 @@ class Explore : Fragment() {
 
         rvTrendingDestinations = viewExplore.findViewById(R.id.rv_trending_destinations)
         rvOffers = viewExplore.findViewById(R.id.rv_offers_explore)
-        btnFav = viewExplore.findViewById(R.id.btn_fav_explore)
+        btnFav = viewExplore.findViewById(R.id.btn_fav_offer)
         destinationName = viewExplore.findViewById(R.id.txt_paris)
         destinationPrice = viewExplore.findViewById(R.id.txt_price)
 
+        db = AppDatabase.getAppDataBase(requireContext())!!
+        destinationDao = db.getDestinationDao()
+/*
         db = Room.databaseBuilder(
             requireContext(),
             AppDatabase::class.java, "database-name"
         )
             .addMigrations(MIGRATION_1_2)
-            .build()
+            .build()*/
 
         val destinationNameText = destinationName.text.toString()
 
         lifecycleScope.launch {
-            val destination = db.getDestinationDao().getDestinationsByName(destinationNameText)
+            val destination = destinationDao.getDestinationsByName(destinationNameText)
             if (destination?.isFavorite == true) {
                 btnFav.setImageResource(R.drawable.heart_fav) // Marked as favorite
             } else {
@@ -79,23 +81,23 @@ class Explore : Fragment() {
 
         btnFav.setOnClickListener {
             lifecycleScope.launch {
-                val destination = db.getDestinationDao().getDestinationsByName(destinationNameText)
+                val destination = destinationDao.getDestinationsByName(destinationNameText)
                 if (destination == null) {
                     // Insert new favorite destination
                     val newDestination = DestinationEntity(name = destinationNameText, price = destinationPrice.text.toString(), isFavorite = true)
-                    db.getDestinationDao().insertDestination(newDestination)
+                    destinationDao.insertDestination(newDestination)
                     Log.d(TAG, "New destination inserted: $newDestination")
                     btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
                 } else {
                     if (destination.isFavorite) {
                         // Remove destination from favorites
-                        db.getDestinationDao().deleteDestination(destination)
+                        destinationDao.deleteDestination(destination)
                         Log.d(TAG, "Destination removed: $destination")
                         btnFav.setImageResource(R.drawable.heart) // Set to not favorite
                     } else {
                         // Update existing destination to be favorite
                         val updatedDestination = destination.copy(isFavorite = true)
-                        db.getDestinationDao().updateDestination(updatedDestination)
+                        destinationDao.updateDestination(updatedDestination)
                         Log.d(TAG, "Destination updated to favorite: $updatedDestination")
                         btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
                     }

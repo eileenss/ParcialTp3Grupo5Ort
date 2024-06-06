@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ParcialOrt</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     /Explore/
@@ -74,6 +73,8 @@
     <string name="txt_lim_offer">Limited time offer!</string>
     <string name="txt_master_offer">20% discount for mastercard users</string>
     <string name="txt_visa_offer">25% discount with your Visa credit cards</string>
+    <string name="txt_visa_description">Use your VISA credit or debit card with any transaction and get 25% discount instantly!</string>
+    <string name="txt_master_description">Use your mastercard with any transaction and get 20% discount instantly! </string>
 
     /Destination/
     <string name="txr_overview">Overview</string>

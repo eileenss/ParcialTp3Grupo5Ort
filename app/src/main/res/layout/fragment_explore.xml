@@ -38,7 +38,7 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <ImageButton
-                android:id="@+id/btn_fav_explore"
+                android:id="@+id/btn_fav_offer"
                 android:layout_width="53dp"
                 android:layout_height="49dp"
                 android:layout_marginTop="12dp"

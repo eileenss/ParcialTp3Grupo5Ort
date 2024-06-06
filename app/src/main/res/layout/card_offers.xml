@@ -27,7 +27,7 @@
                 android:text="LIMITED OFFER!"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/btn_fav_explore"
+                app:layout_constraintEnd_toStartOf="@+id/btn_fav_offer"
                 app:layout_constraintHorizontal_bias="0.037"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +35,7 @@
 
 
             <ImageButton
-                android:id="@+id/btn_fav_explore"
+                android:id="@+id/btn_fav_offer"
                 android:layout_width="53dp"
                 android:layout_height="49dp"
                 android:backgroundTint="#00FFFFFF"

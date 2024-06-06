@@ -1,36 +1,33 @@
 package com.example.parcialtp3grupo5ort.fragments
 
 import android.os.Bundle
-import android.provider.ContactsContract.Contacts.Photo
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3grupo5ort.R
-import com.example.parcialtp3grupo5ort.adapters.TrendDestinationAdapter
-import com.example.parcialtp3grupo5ort.entities.Destination
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.parcialtp3grupo5ort.database.AppDatabase
-import com.example.parcialtp3grupo5ort.database.DestinationEntity
+import com.example.parcialtp3grupo5ort.database.dao.DestinationDao
+import com.example.parcialtp3grupo5ort.database.entities.DestinationEntity
 import kotlinx.coroutines.launch
 
 class Destination : Fragment() {
 
     private lateinit var viewDestination: View
     private lateinit var btnBack: ImageButton
-    private lateinit var rvPhotos: RecyclerView
     private lateinit var btnFav: ImageButton
     private lateinit var destinationName: TextView
     private lateinit var destinationPrice: TextView
     private lateinit var db: AppDatabase
+    private lateinit var destinationDao: DestinationDao
     /*private var photos: MutableList<Photo> = ArrayList()*/
+    /*private lateinit var rvPhotos: RecyclerView*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,15 +47,17 @@ class Destination : Fragment() {
         btnFav = viewDestination.findViewById(R.id.btn_fav_dest)
         destinationName = viewDestination.findViewById(R.id.txt_dest_dest)
         destinationPrice = viewDestination.findViewById(R.id.txt_price_dest)
+        db = AppDatabase.getAppDataBase(requireContext())!!
+        destinationDao = db.getDestinationDao()
 
-        db = Room.databaseBuilder(
+      /*  db = Room.databaseBuilder(
             requireContext(),
             AppDatabase::class.java, "database-name"
         ).build()
-
+*/
         val destinationNameText = destinationName.text.toString()
         lifecycleScope.launch {
-            val destination = db.getDestinationDao().getDestinationsByName(destinationNameText)
+            val destination = destinationDao.getDestinationsByName(destinationNameText)
             if (destination?.isFavorite == true) {
                 btnFav.setImageResource(R.drawable.heart_fav) // Marked as favorite
             } else {
@@ -68,21 +67,21 @@ class Destination : Fragment() {
 
         btnFav.setOnClickListener {
             lifecycleScope.launch {
-                val destination = db.getDestinationDao().getDestinationsByName(destinationNameText)
+                val destination = destinationDao.getDestinationsByName(destinationNameText)
                 if (destination == null) {
                     // Insert new favorite destination
                     val newDestination = DestinationEntity(name = destinationNameText, price = destinationPrice.text.toString(), isFavorite = true)
-                    db.getDestinationDao().insertDestination(newDestination)
+                    destinationDao.insertDestination(newDestination)
                     btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
                 } else {
                     if (destination.isFavorite) {
                         // Remove destination from favorites
-                        db.getDestinationDao().deleteDestination(destination)
+                        destinationDao.deleteDestination(destination)
                         btnFav.setImageResource(R.drawable.heart) // Set to not favorite
                     } else {
                         // Update existing destination to be favorite
                         val updatedDestination = destination.copy(isFavorite = true)
-                        db.getDestinationDao().updateDestination(updatedDestination)
+                        destinationDao.updateDestination(updatedDestination)
                         btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
                     }
                 }

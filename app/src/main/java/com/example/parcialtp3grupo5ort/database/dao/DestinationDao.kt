@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.parcialtp3grupo5ort.database.DestinationEntity
+import com.example.parcialtp3grupo5ort.database.entities.DestinationEntity
 
 @Dao
 interface DestinationDao {
@@ -27,7 +27,7 @@ interface DestinationDao {
     suspend fun updateDestination(destination: DestinationEntity)
 
     @Query("DELETE FROM destination_table")
-    suspend fun deleteAll()
+    suspend fun deleteAllDestination()
 
     @Delete
     suspend fun deleteDestination(destination: DestinationEntity)

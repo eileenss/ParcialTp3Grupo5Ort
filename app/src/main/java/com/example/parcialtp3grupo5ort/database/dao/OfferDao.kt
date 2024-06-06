@@ -6,8 +6,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.parcialtp3grupo5ort.database.DestinationEntity
-import com.example.parcialtp3grupo5ort.database.OfferEntity
+import com.example.parcialtp3grupo5ort.database.entities.DestinationEntity
+import com.example.parcialtp3grupo5ort.database.entities.OfferEntity
 
 @Dao
 interface OfferDao {
@@ -15,22 +15,15 @@ interface OfferDao {
     @Query("SELECT * FROM offer_table")
     suspend fun getAllOffers(): List<OfferEntity>
 
-    @Query("SELECT * FROM destination_table WHERE name = :name LIMIT 1")
-    suspend fun getOfferByName(name: String): OfferEntity?
+    @Query( "SELECT * FROM offer_table WHERE discount = :discount LIMIT 1")
+    suspend fun getOfferByDiscount(discount: String): OfferEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(offers: List<OfferEntity>)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDestination(destination: DestinationEntity)
+    suspend fun insertOffer(offer: OfferEntity)
 
     @Update
     suspend fun updateOffer(offer: OfferEntity)
 
-    @Query("DELETE FROM offer_table")
-    suspend fun deleteAll()
-
     @Delete
     suspend fun deleteOffer(offer: OfferEntity)
 }
-

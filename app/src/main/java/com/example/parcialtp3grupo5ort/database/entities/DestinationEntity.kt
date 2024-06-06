@@ -1,4 +1,4 @@
-package com.example.parcialtp3grupo5ort.database
+package com.example.parcialtp3grupo5ort.database.entities
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

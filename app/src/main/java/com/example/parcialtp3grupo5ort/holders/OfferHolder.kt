@@ -8,16 +8,13 @@ import com.example.parcialtp3grupo5ort.R
 
 class OfferHolder(v: View) : RecyclerView.ViewHolder(v) {
 
-    private var view : View
+    private var view : View = v
+    private val btnFav: ImageView = view.findViewById(R.id.btn_fav_offer)
 
-    init {
-        this.view = v
-    }
-
-    fun setDiscount(discout : String){
+    fun setDiscount(discount : String){
 
         val txt: TextView = view.findViewById(R.id.descuento)
-        txt.text = discout
+        txt.text = discount
     }
     fun setDescription(description : String){
 
@@ -28,6 +25,18 @@ class OfferHolder(v: View) : RecyclerView.ViewHolder(v) {
     fun setImgCard(imgCard: Int) {
         val imageView: ImageView = view.findViewById(R.id.imageUrl)
         imageView.setImageResource(imgCard)
+    }
+
+    fun setFavIcon(isFavorite: Boolean){
+        if (isFavorite) {
+            btnFav.setImageResource(R.drawable.heart_fav)
+        } else {
+            btnFav.setImageResource(R.drawable.heart)
+        }
+    }
+
+    fun setFavClickListener(onClick: () -> Unit){
+        btnFav.setOnClickListener { onClick() }
     }
 
     fun getCardLayout(): View{

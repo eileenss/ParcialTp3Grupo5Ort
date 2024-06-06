@@ -11,8 +11,8 @@ import com.example.parcialtp3grupo5ort.holders.OfferHolder
 
 
 class OfferAdapter(
-private val offers: MutableList<Offer>
-
+private val offers: MutableList<Offer>,
+private val onFavoriteClick: (Offer) -> Unit
 ) : RecyclerView.Adapter<OfferHolder>() {
 
     override fun getItemCount() = offers.size
@@ -32,9 +32,19 @@ private val offers: MutableList<Offer>
         holder.setDiscount(offer.discount)
         holder.setDescription(offer.description)
         holder.setImgCard(offer.imageUrl)
+        holder.setFavIcon(offer.isFavorite)
+
+        holder.setFavClickListener {
+            onFavoriteClick(offer)
+            offer.isFavorite = !offer.isFavorite
+            holder.setFavIcon(offer.isFavorite)
+
+        }
 
 
     }
+
+
 
 }
 
