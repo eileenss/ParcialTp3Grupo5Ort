@@ -59,11 +59,6 @@
     <string name="searchResultsToolbarTitle">EZE -> MIA</string>
     <string name="searchResultsToolbarSubtitle">6 June, 2024</string>
 
-
-    /descount/
-    <string name="get_20_disc">
-        Get 20% discount with your Master credit cards
-    </string>
     /Settings/
     <string name="txt_generales">Generales</string>
     <string name="txt_modo_oscuro">Modo Oscuro</string>
@@ -72,6 +67,7 @@
     /Offers/
     <string name="txt_lim_offer">Limited time offer!</string>
     <string name="txt_master_offer">20% discount for mastercard users</string>
+    <string name="txt_get_master">Get 20% discount with your Master credit cards </string>
     <string name="txt_visa_offer">25% discount with your Visa credit cards</string>
     <string name="txt_visa_description">Use your VISA credit or debit card with any transaction and get 25% discount instantly!</string>
     <string name="txt_master_description">Use your mastercard with any transaction and get 20% discount instantly! </string>
@@ -87,16 +83,6 @@
     <string name="txt_btn_book_now">Book now</string>
     <string name="txt_overview_details">Spend 5 days and 4 nights in one of the best islands in the world! Bask in the sun while walking in the white sand beach and enjoy the night partying at the popular seaside bars.</string>
 
-    /descreption/
-    <string name="use_your_ma">
-        Use your mastercard with any transaction and get 20% discount instantly!
-    </string>
-
-    /offer/
-    <string name="limited_off">
-        Limited offer!
-    </string>
-
     /Profile/
     <string name="txt_macy_johnson">Macy Johnson</string>
     <string name="txt_baguio">Baguio, Philippines</string>
@@ -106,9 +92,5 @@
     <string name="txt_new">NEW</string>
     <string name="txt_settings">Settings</string>
     <string name="txt_logout">Logout</string>
-
-    <string name="offers">
-        Offers
-    </string>
 
 </resources>

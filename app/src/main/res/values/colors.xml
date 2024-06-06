@@ -10,4 +10,5 @@
     <color name="generalesColor">#1B72C0</color>
     <color name="baguioColor">#7E8B97</color>
     <color name="green">#32D4AD</color>
+    <color name="transparent">#00000000</color>
 </resources>

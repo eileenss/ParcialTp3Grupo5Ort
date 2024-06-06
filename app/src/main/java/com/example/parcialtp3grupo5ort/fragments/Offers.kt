@@ -36,7 +36,6 @@ class Offers : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -78,16 +77,16 @@ class Offers : Fragment() {
     private fun loadOffers() {
         offers.add(
             Offer(
-                discount = R.string.txt_master_offer.toString(),
-                description = R.string.txt_master_description.toString(),
+                discount = context?.getString(R.string.txt_get_master).toString(),
+                description = context?.getString(R.string.txt_master_description).toString(),
                 imageUrl = R.drawable.master_img,
                 isFavorite = false
             )
         )
         offers.add(
             Offer(
-                discount = R.string.txt_visa_offer.toString(),
-                description = R.string.txt_visa_description.toString(),
+                discount = context?.getString(R.string.txt_visa_offer).toString(),
+                description = context?.getString(R.string.txt_visa_description).toString(),
                 imageUrl = R.drawable.visa_img,
                 isFavorite = false
             )

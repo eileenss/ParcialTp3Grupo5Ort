@@ -34,12 +34,6 @@ class Explore : Fragment() {
     private lateinit var destinationName: TextView
     private lateinit var destinationPrice: TextView
     private lateinit var destinationDao: DestinationDao
-  /*  private val MIGRATION_1_2 = object : Migration(1, 2) {
-        override fun migrate(database: SupportSQLiteDatabase) {
-            // Perform schema changes like adding a new column
-            database.execSQL("ALTER TABLE destination_table ADD COLUMN is_favorite INTEGER NOT NULL DEFAULT 0")
-        }
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,22 +54,15 @@ class Explore : Fragment() {
 
         db = AppDatabase.getAppDataBase(requireContext())!!
         destinationDao = db.getDestinationDao()
-/*
-        db = Room.databaseBuilder(
-            requireContext(),
-            AppDatabase::class.java, "database-name"
-        )
-            .addMigrations(MIGRATION_1_2)
-            .build()*/
 
         val destinationNameText = destinationName.text.toString()
 
         lifecycleScope.launch {
             val destination = destinationDao.getDestinationsByName(destinationNameText)
             if (destination?.isFavorite == true) {
-                btnFav.setImageResource(R.drawable.heart_fav) // Marked as favorite
+                btnFav.setImageResource(R.drawable.heart_white) // Marked as favorite
             } else {
-                btnFav.setImageResource(R.drawable.heart) // Not marked as favorite
+                btnFav.setImageResource(R.drawable.heart_white_stroke) // Not marked as favorite
             }
         }
 
@@ -87,26 +74,23 @@ class Explore : Fragment() {
                     val newDestination = DestinationEntity(name = destinationNameText, price = destinationPrice.text.toString(), isFavorite = true)
                     destinationDao.insertDestination(newDestination)
                     Log.d(TAG, "New destination inserted: $newDestination")
-                    btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
+                    btnFav.setImageResource(R.drawable.heart_white) // Set to favorite
                 } else {
                     if (destination.isFavorite) {
                         // Remove destination from favorites
                         destinationDao.deleteDestination(destination)
                         Log.d(TAG, "Destination removed: $destination")
-                        btnFav.setImageResource(R.drawable.heart) // Set to not favorite
+                        btnFav.setImageResource(R.drawable.heart_white_stroke) // Set to not favorite
                     } else {
                         // Update existing destination to be favorite
                         val updatedDestination = destination.copy(isFavorite = true)
                         destinationDao.updateDestination(updatedDestination)
                         Log.d(TAG, "Destination updated to favorite: $updatedDestination")
-                        btnFav.setImageResource(R.drawable.heart_fav) // Set to favorite
+                        btnFav.setImageResource(R.drawable.heart_white) // Set to favorite
                     }
                 }
             }
         }
-
-
-
 
         return viewExplore
     }

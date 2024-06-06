@@ -13,7 +13,7 @@ class OfferHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     fun setDiscount(discount : String){
 
-        val txt: TextView = view.findViewById(R.id.descuento)
+        val txt: TextView = view.findViewById(R.id.discount)
         txt.text = discount
     }
     fun setDescription(description : String){
@@ -29,9 +29,9 @@ class OfferHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     fun setFavIcon(isFavorite: Boolean){
         if (isFavorite) {
-            btnFav.setImageResource(R.drawable.heart_fav)
+            btnFav.setImageResource(R.drawable.heart_blue)
         } else {
-            btnFav.setImageResource(R.drawable.heart)
+            btnFav.setImageResource(R.drawable.heart_white_stroke_black)
         }
     }
 

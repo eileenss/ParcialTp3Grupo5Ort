@@ -38,13 +38,7 @@ private val onFavoriteClick: (Offer) -> Unit
             onFavoriteClick(offer)
             offer.isFavorite = !offer.isFavorite
             holder.setFavIcon(offer.isFavorite)
-
         }
-
-
     }
-
-
-
 }
 

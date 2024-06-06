@@ -26,5 +26,4 @@ class TrendDestinationAdapter(
         holder.setCode(trendingDestination.code)
         holder.setImg(trendingDestination.img)
     }
-
 }
